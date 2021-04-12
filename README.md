@@ -11,6 +11,7 @@ service name is required and it is used to track apm data in kibana
 get secret token from ES for authentication
 Elastic APM will record the transaction from the start of lambda_handler till end which involves transaction processing time, error, stack trace etc
 
+```
 client = Client(
     {
         'SERVER_URL': 'https://xxxxxxxxxxxxxxxxxxxxxxx.apm.us-east-1.aws.cloud.es.io:443',
@@ -19,26 +20,32 @@ client = Client(
         'SECRET_TOKEN': ''
     }
 )
+```
 
 ## Elastic RUM
 This is used to get front end website performance like page load time, dom processing etc
+```
 <script>
   elasticApm.init({
     serviceName: 'feedback-rum',
     serverUrl: 'https://xxxxxxxxxxxxxxxxxxxxxxxxxxx.apm.us-east-1.aws.cloud.es.io:443',
   })
 </script>
+```
 replace the serverurl with elastic cloud url and servicename to your wish
-
+```
 client.begin_transaction('request')
 def lambda_handler(event, context):
     ............
 client.end_transaction('feedback-transaction', 'success')
+```
 
 ## HTML: 
 In index.html change the URL of api gateway in form actions 
+```
 <div class="enquiry_form">
   <form action="https://xxxxxxxxxxxxxxxxxxxxxx-api-endpoint.com">
+```
 
 ## schemas.js 
 This is a schema to validate the parameters 
@@ -54,12 +61,14 @@ remove # from #print(lambda_handler(event,context)) in app.py to run the python 
 
 ## app.py
 This is the lambda function using python to get query paramters, validate and send to rds and ses service for notification and storage of info
+```
 rds_host  = "rds-instance-endpoint"
 name = "db_username"
 password = "db_password"
 db_name = "db_name"
 recepient_email = "test@gmail.com"
 sender_email = "test@gmail.com"
+```
 
 modify the above variables to authenticate RDS and verify the ses sender email once to make ses service active
 refer secrets manager service (cost involed for storing per secret) to store cred in the SM and access in this python lambda using boto library  
