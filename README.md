@@ -37,8 +37,8 @@ client.end_transaction('feedback-transaction', 'success')
 
 ## HTML: 
 In index.html change the URL of api gateway in form actions 
-  <div class="enquiry_form">
-        <form action="https://xxxxxxxxxxxxxxxxxxxxxx-api-endpoint.com">
+<div class="enquiry_form">
+  <form action="https://xxxxxxxxxxxxxxxxxxxxxx-api-endpoint.com">
 
 ## schemas.js 
 This is a schema to validate the parameters 
