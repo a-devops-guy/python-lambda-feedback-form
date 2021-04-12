@@ -1,0 +1,53 @@
+<html>
+<head>
+<link rel="stylesheet" href="form.css">
+<script src="test.js" crossorigin></script>
+<script>
+  elasticApm.init({
+    serviceName: 'feedback-rum',
+    serverUrl: 'https://xxxxxxxxxxxxxxxxxxxxxxxxxxx.apm.us-east-1.aws.cloud.es.io:443',
+  })
+</script>
+</head>
+<body>
+    <div class="enquiry_title">
+        <h2>Enquiry Form</h2>
+    </div>
+    
+    <div class="enquiry_form">
+        <form action="https://xxxxxxxxxxxxxxxxxxxx-api.us-east-1.amazonaws.com/Dev/feedback_form">
+          <div class="row">
+            <div class="col-25">
+              <label for="name">Name</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="name" name="name" placeholder="Your name..">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="country">Country</label>
+            </div>
+            <div class="col-75">
+              <select id="country" name="country">
+                <option value="india">India</option>
+                <option value="srilanka">Sri Lanka</option>
+                <option value="newzealand">New Zealand</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="subject">How can we help you?</label>
+            </div>
+            <div class="col-75">
+              <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <input type="submit" value="Submit">
+          </div>
+        </form>
+      </div>
+</body>
+</html>

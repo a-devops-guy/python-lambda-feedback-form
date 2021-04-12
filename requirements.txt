@@ -1,0 +1,3 @@
+schemas == 0.7.*
+aws-lambda-powertools == 1.14.*
+elastic-apm
